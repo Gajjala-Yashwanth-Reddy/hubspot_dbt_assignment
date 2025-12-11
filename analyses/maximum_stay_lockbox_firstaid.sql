@@ -8,7 +8,6 @@ with filtered as (
       and has_first_aid_kit = true
 ),
 
--- 2. Assign each row a row_number so we can detect gaps-in-dates for each listing
 numbered as (
     select
         listing_id,
@@ -17,7 +16,6 @@ numbered as (
     from filtered
 ),
 
--- 3. Create "islands" by subtracting rn from the date — this creates equal "grp" values for consecutive dates
 islands as (
     select
         listing_id,
@@ -26,7 +24,6 @@ islands as (
     from numbered
 ),
 
--- 4. Aggregate each island into a contiguous block with start, end, and number of nights
 contiguous AS (
     select
         listing_id,
@@ -37,7 +34,6 @@ contiguous AS (
     group by listing_id, grp
 )
 
--- 5. Final result
 select *
 from contiguous
 order by nights desc, listing_id
