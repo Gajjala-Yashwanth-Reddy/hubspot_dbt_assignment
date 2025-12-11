@@ -78,7 +78,7 @@ These are loaded into the catalog as `rental_analytics.source`.
 
 #### 2. Staging
 
-Light transformations and normalizations such as renaming fields, casting types, and standardizing columns. Models here mirror raw structure for ease of reuse.
+Light transformations and normalizations such as renaming fields, casting types, and standardizing columns.
 
 Examples:
 - `stg__listings`
