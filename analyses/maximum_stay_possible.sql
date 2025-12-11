@@ -3,7 +3,7 @@ with available as (
         listing_id,
         date_day,
         row_number() over (partition by listing_id order by date_day) as rn
-    from rental_analytics.marts.rental__listing_daily_metrics
+    from {{ ref('rental__listing_daily_metrics') }}
     where is_available = true
 )
 , islands as (
