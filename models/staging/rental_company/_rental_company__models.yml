@@ -1,0 +1,12 @@
+models:
+  - name: stg__listings
+    description: "Cleaned listings data with typed fields"
+
+  - name: stg__calendar
+    description: "Cleaned calendar data with typed fields"
+
+  - name: stg__generated_reviews
+    description: "Cleaned reviews data"
+
+  - name: stg__amenities_changelog
+    description: "Cleaned amenity changelog data"

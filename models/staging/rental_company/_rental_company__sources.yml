@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: raw
+    catalog: rental_analytics
+    schema: source
+    description: "Raw CSVs loaded"
+    tables:
+      - name: listings
+        description: "Listing-level information"
+        columns:
+          - name: id
+            tests: [not_null, unique]
+
+      - name: calendar
+        description: "Daily calendar with availability and pricing"
+        columns:
+          - name: listing_id
+            tests: [not_null]
+          - name: date
+            tests: [not_null]
+
+      - name: generated_reviews
+        description: "Generated reviews: date and score"
+        columns:
+          - name: id
+            tests: [unique]
+
+      - name: amenities_changelog
+        description: "When amenity sets changed for each listing"
+        columns:
+          - name: listing_id
+            tests: [not_null]
+          - name: change_at
+            tests: [not_null]
+

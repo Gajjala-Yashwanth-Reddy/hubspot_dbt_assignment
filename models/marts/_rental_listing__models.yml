@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: rental__listing_daily_metrics
+    description: "Final mart at listing-day grain for revenue, occupancy, reviews, and amenities"

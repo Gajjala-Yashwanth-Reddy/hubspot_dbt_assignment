@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_daily_amenities
+    description: "Effective amenities per listing per day, using the changelog"
+
+  - name: int_daily_reviews
+    description: "Daily average, min, max review score per listing"
+
+  - name: int_daily_calendar
+    description: "Calendar enriched with listing metadata, amenities, and reviews by day"
