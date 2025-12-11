@@ -4,7 +4,7 @@ with prices as (
         listing_id,
         max(case when date_day = '2021-07-12' then day_price end) as price_2021,
         max(case when date_day = '2022-07-11' then day_price end) as price_2022
-    from rental_analytics.marts.rental__listing_daily_metrics
+    from {{ ref('rental__listing_daily_metrics') }}
     group by 1, 2
 )
 
