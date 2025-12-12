@@ -103,7 +103,7 @@ Final curated datasets designed for analysis and reporting. The primary mart in 
 #### 5. Analyses Layer
 
 This layer contains non-materialized SQL used for reference, ad hoc analytical queries, and solving the business questions provided in the assessment.
-These models do not build tables in the warehouse; instead, they serve as documented analytical logic for stakeholders or reviewers.
+These models serve as documented analytical logic for stakeholders or reviewers.
 
 Analysis models include:
 
