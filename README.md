@@ -116,3 +116,38 @@ Analysis models include:
   - `neighbourhood_pricing_change` — Neighborhood-level price change analysis across a 1-year period
 
 The analyses folder demonstrates how the curated mart enables simple, expressive SQL for real business questions.
+
+---
+
+Output Validation & Data Quality
+
+1. Tests
+We can ensure the data quality of our models by utilizing different types of tests. They can check if data in our fields is unique, doesn’t have null values, or perform more advanced logic checks.
+
+For more advanced testing, we can write our own custom tests, use unit tests to validate transformation logic, or leverage packages like dbt_expectations for additional validation.
+
+Example of built-in tests :
+
+<pre>
+sources:
+  - name: raw
+    catalog: rental_analytics
+    schema: source
+    description: "Raw CSVs loaded"
+    tables:
+      - name: listings
+        description: "Listing-level information"
+        columns:
+          - name: id
+            tests: [not_null, unique]
+
+      - name: calendar
+        description: "Daily calendar with availability and pricing"
+        columns:
+          - name: listing_id
+            tests: [not_null]
+          - name: date
+            tests: [not_null]
+ ....
+</pre>
+            
