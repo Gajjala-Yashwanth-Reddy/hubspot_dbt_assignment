@@ -1,6 +1,3 @@
--- For each listing, determine amenity ranges by change_at,
--- then map those ranges to calendar dates.
-
 WITH changes AS (
 
   SELECT
