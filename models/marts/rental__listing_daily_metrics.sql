@@ -46,10 +46,10 @@ final AS (
     overall_review_rating,
     amenities,
     CASE
-      WHEN reservation_id IS NOT null THEN day_price
+      WHEN reservation_id IS NOT NULL THEN day_price
       ELSE 0
     END AS revenue,
-    (reservation_id IS NOT null) AS is_occupied,
+    (reservation_id IS NOT NULL) AS is_occupied,
     coalesce(amenities LIKE '%"Air conditioning"%', false) AS has_ac,
     coalesce(amenities LIKE '%"Lockbox"%', false) AS has_lockbox,
     coalesce(amenities LIKE '%"First aid kit"%', false) AS has_first_aid_kit
